@@ -1,5 +1,3 @@
-CREATE DATABASE `db_manage_user`
-
 CREATE TABLE IF NOT EXISTS `tb_users` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `first_name` text NOT NULL,
