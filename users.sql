@@ -1,4 +1,6 @@
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE DATABASE `db_manage_user`
+
+CREATE TABLE IF NOT EXISTS `tb_users` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `first_name` text NOT NULL,
   `last_name` text NOT NULL,
@@ -6,4 +8,4 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_name` varchar(20) NOT NULL,
   `password` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4;

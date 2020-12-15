@@ -1,9 +1,10 @@
 {
-  "name": "simple_login",
+  "name": "SimpleLogin",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "mysql": "^2.17.1",
+    "nodemon": "^2.0.6",
     "req-flash": "0.0.3"
   }
 }
