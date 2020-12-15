@@ -2,8 +2,11 @@
 //---------------------------------------------signup page call------------------------------------------------------
 exports.signup = function(req, res){
    message = '';
+
+   console.log(req.body)
    if(req.method == "POST"){
       var post  = req.body;
+
       var name= post.user_name;
       var pass= post.password;
       var fname= post.first_name;

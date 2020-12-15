@@ -27,16 +27,16 @@ app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views'); // setting views folder menjadi root template engine
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false })); // supaya bisa ngakses body parser
-app.use(bodyParser.json());
+app.use(bodyParser.json()); // mengembalikan json data
 app.use(express.static('public'))
 
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 }
+  cookie: { maxAge: 3000000 }
 }))
- 
+
 // development only
 app.get('/', routes.index);//call for main index page
 app.get('/signup', user.signup);//call for signup page
