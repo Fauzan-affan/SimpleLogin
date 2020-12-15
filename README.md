@@ -1,10 +1,10 @@
-# node-mysql-login-registration
+# SimpleLogin
 simple login and registration tutorial with mysql
 
 
 ```js
-cd node-mysql-login-registration-master
-npm install
+cd SimpleLogin
+npm start
 node app.js
 
 install xampp
