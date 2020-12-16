@@ -1,28 +1,31 @@
 
+//---------------------------------------------import model------------------------------------------------------
+const {signupQuery} = require('../model/SignupQuery');
 //---------------------------------------------signup page call------------------------------------------------------
-exports.signup = function(req, res){
-   message = '';
+exports.signup = function(req, response){
+   
+   let param = {
+      message: '',
+      error: '',
+      result: ''
+   }
 
-   // console.log(req.body)
    if(req.method == "POST"){
-      var post  = req.body;
 
-      var name= post.user_name;
-      var pass= post.password;
-      var fname= post.first_name;
-      var lname= post.last_name;
-      var mob= post.mob_no;
+      const getData = (results) => {
+         const {mes, err, res} = results
+         
+         param.message = mes
+         param.error = err
+         param.result = res
 
-      var sql = "INSERT INTO `tb_users`(`first_name`,`last_name`,`mob_no`,`user_name`, `password`) VALUES ('" + fname + "','" + lname + "','" + mob + "','" + name + "','" + pass + "')";
+         response.render('signup.ejs', param);
+      }
 
-      db.query(sql, function(err, result) {
-
-         message = "Succesfully! Your account has been created.";
-         res.render('signup.ejs',{message: message});
-      });
-
+      signupQuery(req.body, getData)
+      
    } else {
-      res.render('signup.ejs');
+      response.render('signup.ejs', param);
    }
 };
  

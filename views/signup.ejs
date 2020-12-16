@@ -7,7 +7,7 @@
       href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
     />
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <script>
+    <!-- <script>
       function empty() {
         var x;
         x = document.getElementById("roll-input").value;
@@ -15,7 +15,7 @@
           return false;
         }
       }
-    </script>
+    </script> -->
   </head>
   <body>
     <div class="container col-sm-12" id="mainform">
@@ -44,10 +44,14 @@
               role="form"
               method="post"
               action="/signup"
-              onClick="return empty()"
             >
-              <% if (message.length > 0) { %>
+              <!-- <% console.log(message, error, result) %> -->
+              <% if (message === "Succesfully! Your account has been created.") { %>
                 <div class="alert alert-success col-sm-12"><%= message %></div>
+              <% } %>
+
+              <% if (message === "Data cant be null or empty") { %>
+                <div class="alert alert-danger col-sm-12"><%= message %></div>
               <% } %>
               <div
                 id="signupalert"
