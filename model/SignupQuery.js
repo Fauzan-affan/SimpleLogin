@@ -1,5 +1,5 @@
 exports.signupQuery = async (data, getData) => {
-  let obj = { err: "", res: {}, mes: "" };
+  let obj = { err: "", result: {}, mes: "" };
   let { first_name, last_name, mob_no, user_name, password } = data;
 
   if (first_name && last_name && mob_no && user_name && password) {
@@ -8,17 +8,18 @@ exports.signupQuery = async (data, getData) => {
     await db.query(sql, (err, result) => {
       if (!err) {
         obj.err = err;
-        obj.res = result;
+        obj.result = result;
         obj.mes = "Succesfully! Your account has been created.";
         getData(obj)
       } else {
         obj.err = err;
-        obj.res = result;
+        obj.result = result;
         obj.mes = "Failed creating an account :(";
         getData(obj)
       }
     });
     
+    // reset
     first_name = ""
     last_name= ""
     mob_no = ""
